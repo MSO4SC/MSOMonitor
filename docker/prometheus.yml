@@ -13,12 +13,14 @@
 
 # System configuration
 global:
-  scrape_interval: 60s
-  evaluation_interval: 120s
+  scrape_interval: 1m # default 1m
+  scrape_timeout: 10s # default 10s
+  evaluation_interval: 1m # default 1m
+  external_labels:
+    monitor: 'mso-monitor'
 
-  monitor: 'mso-monitor'
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
-rule_files:
+#rule_files:
 #  - test.rules
 #  - alerts/*.rules
 
@@ -26,5 +28,5 @@ scrape_configs:
   - job_name: 'UNKNOWN'  # This is a default value, it is mandatory.
     file_sd_configs:
       - files:
-        - targets/*.json
+        - /mso4sc/targets/*.json
 

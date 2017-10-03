@@ -1,9 +1,0 @@
-[
-  {
-    "targets": ["localhost:8080"],
-    "labels": {
-      "env": "canary",
-      "job": "FT2"
-    }
-  }
-]
