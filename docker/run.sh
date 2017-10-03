@@ -14,4 +14,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker run -d -p 9090:9090 mso4sc/monitor
+docker run -d -p 9090:9090 mso4sc/msomonitor

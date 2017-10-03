@@ -14,4 +14,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker build -t mso4sc/monitor --no-cache .
+docker build -t mso4sc/msomonitor --no-cache .

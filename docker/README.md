@@ -14,11 +14,8 @@ time="2017-10-03T15:16:46Z" level=info msg="Listening on :9090" source="web.go:2
 time="2017-10-03T15:16:46Z" level=info msg="Starting target manager..." source="targetmanager.go:63"
 ```
 
-## Development
 
 One script helps working with docker:  
 `run.sh` runs a new monitor in a new container.  
 
-Two scripts help building and publishing the image  
-`build.sh` build the image using the Dockerfile  
-`publish.sh` push the image in Docker Hub  
+To build the image locally, `build.sh` helps doing it.  
