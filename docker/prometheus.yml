@@ -14,7 +14,7 @@
 # System configuration
 global:
   scrape_interval: 1m # default 1m
-  scrape_timeout: 10s # default 10s
+  scrape_timeout: 45s # default 10s
   evaluation_interval: 1m # default 1m
   external_labels:
     monitor: 'mso-monitor'
