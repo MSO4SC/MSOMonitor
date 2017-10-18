@@ -108,7 +108,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "msomonitor",
-          "fill": 1,
+          "fill": 0,
           "id": 12,
           "legend": {
             "avg": false,
@@ -135,6 +135,7 @@
           "targets": [
             {
               "expr": "100 - avg(partition_nodes{job=\"$host\",state=\"idle\"}) by (partition)",
+              "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{partition}}",
@@ -224,6 +225,7 @@
           "targets": [
             {
               "expr": "avg(job_wait_time{job=\"$host\",partition=\"$partition\",state=\"PENDING\"})",
+              "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{$partition}}",
@@ -255,7 +257,7 @@
               "label": null,
               "logBase": 1,
               "max": null,
-              "min": null,
+              "min": "0",
               "show": true
             },
             {
@@ -301,6 +303,7 @@
           "targets": [
             {
               "expr": "100 - avg(partition_nodes{job=\"$host\",state=\"idle\",partition=\"$partition\"})",
+              "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "{{$partition}}",
@@ -331,8 +334,8 @@
               "format": "percent",
               "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
+              "max": "100",
+              "min": "0",
               "show": true
             },
             {
@@ -545,7 +548,6 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
           "text": "cola-corta",
           "value": "cola-corta"
         },
@@ -622,5 +624,5 @@
   },
   "timezone": "browser",
   "title": "MSO4SC",
-  "version": 2
+  "version": 3
 }
