@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+    monitor:
+        image: "mso4sc/msomonitor:latest"
+        ports:
+            - 9090:9090
+        volumes:
+            - mso4sc-data:/mso4sc
+    exporter_orchestrator:
+        image: "mso4sc/exporter_orchestrator:latest"
+        command: ["-monitor-host", "monitor:9090", "-log-level", "debug"]
+        ports:
+            - 8079:8079
+        volumes:
+            - /lib64:/lib64
+            - /usr:/usr
+            - /lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu
+            - /var/run/docker.sock:/var/run/docker.sock
+            - mso4sc-data:/mso4sc
+    grafana:
+        image: "grafana/grafana:latest"
+        ports:
+            - 3000:3000
+        volumes:
+            - grafana:/var/lib/grafana
+volumes:
+    mso4sc-data:
+    grafana:
