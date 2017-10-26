@@ -23,6 +23,6 @@ RUN mkdir -p /mso4sc/targets
 ADD prometheus.json /mso4sc/targets
 
 # Shared volume
-VOLUME ['/mso4sc']
+VOLUME ["/mso4sc"]
 
 EXPOSE 9090
